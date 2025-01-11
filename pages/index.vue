@@ -60,4 +60,17 @@ const { data, status } = await useAsyncData("transactions", async () => {
   return data;
 });
 transactions.value = data.value;
+
+const transactionsGroupedByDate = computed(() => {
+  let grouped = {};
+  for (const transaction of transactions.value) {
+    const date = new Date(transaction.created_at).toISOString().split("T")[0];
+    if (!grouped[date]) {
+      grouped[date] = [];
+    }
+    grouped[date].push(transaction);
+  }
+  return grouped;
+});
+console.log(transactionsGroupedByDate.value);
 </script>
