@@ -40,7 +40,7 @@
 </template>
 
 <script setup>
-
+import { transactionViewOptions } from '~/constants';
 const user = useSupabaseUser();
 const selectedView = ref(user.value.user_metadata?.transaction_view ?? transactionViewOptions[1]);
 const isOpen = ref(false);
