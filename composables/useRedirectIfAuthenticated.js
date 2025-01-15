@@ -4,7 +4,7 @@ export const useRedirectIfAuthenticated = (url = "/") => {
     user,
     (user) => {
       if (user) {
-        return navigateTo(url);
+        return navigateTo(url, { external: true });
       }
     },
     { immediate: true }
