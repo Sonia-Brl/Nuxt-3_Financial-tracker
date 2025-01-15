@@ -6,11 +6,11 @@
     </div>
   </section>
 
-  <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 sm:gap-16 mb-10">
+  <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 sm:gap-16 mb-10">
     <Trend color="green" title="Income" :amount="incomeTotal" :last-amount="prevIncomeTotal" :loading="pending" />
     <Trend color="red" title="Expense" :amount="expenseTotal" :last-amount="prevExpenseTotal" :loading="pending" />
-    <Trend color="green" title="Investments" :amount="4000" :last-amount="3000" :loading="pending" />
-    <Trend color="red" title="Saving" :amount="4000" :last-amount="4100" :loading="pending" />
+    <!--     <Trend color="green" title="Investments" :amount="4000" :last-amount="3000" :loading="pending" />
+    <Trend color="red" title="Saving" :amount="4000" :last-amount="4100" :loading="pending" /> -->
   </section>
 
   <section class="flex justify-between mb-10">
