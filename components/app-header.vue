@@ -40,7 +40,6 @@ const items = [
     label: 'Sign out',
     icon: 'i-heroicons-arrow-left-on-rectangle',
     click: async () => {
-      console.log("a Cliqué");
       await supabase.auth.signOut();
       return navigateTo('/login');
     }
