@@ -26,18 +26,21 @@
 <script setup>
 
 // http://localhost:3000/login
-const success = ref(false)
-const email = ref('')
-const pending = ref(false)
-const toast = useToast()
-const supabase = useSupabaseClient()
+const success = ref(false);
+const email = ref('');
+const pending = ref(false);
+const toast = useToast();
+const supabase = useSupabaseClient();
+
+useRedirectIfAuthenticated();
+
 const handleLogin = async () => {
     pending.value = true
     try {
         const { error } = await supabase.auth.signInWithOtp({
             email: email.value,
             options: {
-                emailRedirectTo: 'http://localhost:3000'
+                emailRedirectTo: 'http://localhost:3000/confirm'
             }
         })
         if (error) {
